@@ -14,6 +14,7 @@ def conexao_spotify():
     return spotify
 
 def conexao_banco_dados():
+    """Conecta com o banco de dados e retorne o objeto engine"""
     load_dotenv('.env')
     conn_str = f"mysql+pymysql://{os.getenv('user')}:{os.getenv('senha')}@{os.getenv('url_banco')}/{os.getenv('nome_db')}"
     engine = sa.create_engine(conn_str)
